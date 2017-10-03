@@ -34,10 +34,14 @@ def test_login
 	username = @my_driver.find_element(:xpath, '//*[@id="username"]')
 	username.send_keys("UsingXPATH")
 
+	# Using an absolute path to obtain an element
+	
+
 
 end
 
 def test_link
+	omit("Skipping test")
 =begin
 There are different finders - used to search for elements
 
