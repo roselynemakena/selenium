@@ -29,11 +29,31 @@ class GoogleTest < Test::Unit::TestCase
 
 		# Assert that the search bar title is what you expect
 		assert_equal("Selenium webdriver - Google Search", @driver.title)
+
+		ret = @driver.find_element(:tag_name, "input")
+		puts ret
+		
+	end
+
+	def test_click_arm
+		@driver.get("https://live.mystocks.co.ke/")
+
+		@link = @driver.find_element(:id, "mnuMarket")
+		@link.click
+		sleep(2)
+		@dropDown = @driver.find_element(:id, 'mnuMarketDD')
+
+		@daily_price_list_link = @dropDown.find_element
+
+		puts @daily_price_list_link
+		@daily_price_list_link.click
+
+
 		
 	end
 
 	def teardown
-		@driver.quit
+		# @driver.quit
 		
 	end
 
