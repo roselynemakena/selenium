@@ -30,6 +30,10 @@ def test_get_table
 
 	elements = @my_driver.find_element(:xpath, '//*[@id="dropdown"]')
 	elements.find_element(:xpath, '//*[@id="dropdown"]/option[1]').click
+
+	#Takefirst screenshot
+	@my_driver.save_screenshot('/home/makena/screenshots/screenshot01.png')
+
 	@my_driver.action.key_down(:control)
 	elements.find_element(:xpath, '//*[@id="dropdown"]/option[2]').click
 
@@ -47,7 +51,7 @@ sleep(2)
 
 puts "----------taking screenshot--------------"
 
-@my_driver.save_screenshot('/home/makena/screenshots/sel.png')
+@my_driver.save_screenshot('/home/makena/screenshots/screenshot01.png')
 
 
 	
